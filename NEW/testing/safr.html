@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safr</title>
+   <link rel="stylesheet" href="f/css/normalize.css">
+  <link rel="stylesheet" href="f/css/foundation.css">
+
+
+<!--SAFR SCRIPTS-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6eUq07bSki1oMGtbBzAjd0PwimzB-gm0&sensor=true"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.geo.js"></script>	
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.main.js"></script>
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.reporting.js"></script>
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.execute.js"></script>
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.data.js"></script>
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.charts.js"></script>
+	
+<link href="https://www.google.com/uds/api/visualization/1.0/ce05bcf99b897caacb56a7105ca4b6ed/ui+en.css" type="text/css" rel="stylesheet">    
+    <!--END OF SAFR SCRIPTS-->
+    
+    
+  <script src="f/js/vendor/modernizr.js"></script>
+<style>
+.cb {
+	color:#F1F1F1 !important;
+	padding:10px !important;	
+}
+#map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+		z-index:9999;
+      }
+</style>
+    
+  </head>
+  <body>
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+<nav class="tab-bar">
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+  </section>
+  
+   <section class="middle tab-bar-section">
+    <h1 class="title">Safr</h1>
+  </section>
+  <section class="right-small">
+    <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+  </section>
+</nav>
+
+    <aside class="left-off-canvas-menu">
+  <ul class="off-canvas-list">
+    <li><label>Tools</label></li>
+
+<div>	
+		<select id="month">
+		    <option value='null'>Month</option>
+		    <option value='01'>January</option>
+		    <option value='02'>February</option>
+		    <option value='03'>March</option>
+		    <option value='04'>April</option>
+		    <option value='05'>May</option>
+		    <option value='06'>June</option>
+		    <option value='07'>July</option>
+		    <option value='08'>August</option>
+		    <option value='09'>September</option>
+		    <option value='10'>October</option>
+		    <option value='11'>November</option>
+		    <option value='12'>December</option>
+		</select>
+
+		<select id="year">
+		    <option value='null'>Year</option>
+		    <option value='2010'>2010</option>
+		    <option value='2011'>2011</option>
+		    <option value='2012'>2012</option>
+		    <option value='2013'>2013</option>
+		    <option value='2014'>2014</option>		    
+		</select>
+        </div>
+      
+	
+
+		
+        <div class="safr-tools">
+        <button id="button1" style="width:100%">Search via GPS</button>
+<input id="txtAddress" type="search" placeholder="Search via Post Code/Location"></div>
+<button id="button2" style="width:100%">Search</button>
+<ul class="off-canvas-list">
+    <li><label>Crime Breakdown</label></li>
+   <div class="cb"><div id='arraycontent'></div>
+<div id='arraycontent3'></div>
+<div id='arraycontent4'></div>
+<div id='arraycontent'></div>
+<div id='arraycontent2'></div>
+   <div style="display:none" id='surrCheck'>
+			<input type="checkbox" id="incidentsChk" name="safrMarkers" value="safrMarkers">Incidents
+		</div>
+        </div>
+  </ul>
+  </ul>
+</aside>
+
+  <div id="map-canvas"></div>
+
+  </div>
+</div>
+ 
+   
+   
+   
+     <script src="f/js/vendor/jquery.js"></script>
+  <script src="f/js/foundation.min.js"></script>
+  <script src="f/js/foundation/foundation.offcanvas.js"></script>
+  <script src="f/js/foundation/foundation.accordion.js"></script>
+  <script>
+ $(".accordion dd").on("click", "a:eq(0)", function (event)
+      {
+        var dd_parent = $(this).parent();
+
+        if(dd_parent.hasClass('active'))
+          $(".accordion dd div.content:visible").slideToggle("normal");
+        else
+        {
+          $(".accordion dd div.content:visible").slideToggle("normal");
+          $(this).parent().find(".content").slideToggle("normal");
+        }
+      });
+	  </script>
+  <script>
+    $(document).foundation();
+  </script> 
+
+  </body>
+</html>

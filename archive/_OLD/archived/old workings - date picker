@@ -1,0 +1,44 @@
+
+  // date picker function
+  /*$(function() {
+    $('.date-picker').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        dateFormat: 'MM yy',
+        onClose: function(dateText, inst) { 
+            var $getmonth = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+
+            //custom work to change the date for the query string
+            $month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+            $month = parseInt($month) + 1;  
+            if (($month + "").length == 1){
+              $month = '0' + $month;
+            }
+
+            $year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date($year, $getmonth, 1));
+        },
+        beforeShow : function(input, inst) {
+            if ((datestr = $(this).val()).length > 0) {
+                $year = datestr.substring(datestr.length-4, datestr.length);
+                $getmonth = jQuery.inArray(datestr.substring(0, datestr.length-5), $(this).datepicker('option', 'monthNames'));
+                $(this).datepicker('option', 'defaultDate', new Date($year, $getmonth, 1));
+                $(this).datepicker('setDate', new Date($year, $getmonth, 1));
+            }
+        }
+    });
+  });*/
+
+
+
+
+    <!-- THESE THREE BELOW ARE FOR THE DATE PICKER 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">-->
+
+
+            <!--<div>
+            <input name="startDate" id="startDate" class="date-picker" />
+        </div>-->

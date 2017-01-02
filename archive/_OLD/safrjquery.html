@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+	<title>stephen new | personal web site</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6eUq07bSki1oMGtbBzAjd0PwimzB-gm0&sensor=true"></script>
+    <script type="text/javascript" src='geo.js'></script>
+	<script type="text/javascript" src='http://www.stephennew.com/jquery/jquery-1.11.0.min.js'></script>
+	<script type="text/javascript" src='safrscripts.js'></script>
+
+	<style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>	
+</head>
+<body>
+	<div style="height:50%; width:50%; margin:auto" id="map-canvas"></div>
+	<div>
+		<div>	
+		<select id="month">
+		    <option value='null'>- choose -</option>
+		    <option value='01'>January</option>
+		    <option value='02'>February</option>
+		    <option value='03'>March</option>
+		    <option value='04'>April</option>
+		    <option value='05'>May</option>
+		    <option value='06'>June</option>
+		    <option value='07'>July</option>
+		    <option value='08'>August</option>
+		    <option value='09'>September</option>
+		    <option value='10'>October</option>
+		    <option value='11'>November</option>
+		    <option value='12'>December</option>
+		</select>
+
+		<select id="year">
+		    <option value='null'>- choose -</option>
+		    <option value='2010'>2010</option>
+		    <option value='2011'>2011</option>
+		    <option value='2012'>2012</option>
+		    <option value='2013'>2013</option>
+		    <option value='2014'>2014</option>		    
+		</select>
+		<br>
+		<div>
+			<button id="button1">press this to check around you!</button>
+		</div>
+		<br>
+			<p>OR search by postcode! (you still need to select year and month) </p>
+		<br>
+			<textarea id='txtAddress' placeholder="DH4 5RA"></textarea>	
+		<br>
+			<button id="button2">press this to check around your postcode!</button>
+		<br>
+		<div id='arraycontent'>
+		</div>
+		<br>		
+		<div id='arraycontent2'></div>		
+
+	</div>
+	
+	<!-- GOOGLE ANALYTICS -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-40562660-1', 'stephennew.com');
+	  ga('send', 'pageview');
+	</script>
+
+</body>
+</html>

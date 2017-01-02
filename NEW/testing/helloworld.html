@@ -1,0 +1,284 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+
+
+
+
+<meta charset="UTF-8">
+
+<title>Untitled Document</title>
+
+<!--GOOGLE MAPS API-->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6eUq07bSki1oMGtbBzAjd0PwimzB-gm0&sensor=true"></script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="http://www.stephennew.com/safr/NEW/testing/script/safr.geo.js"></script>	
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.main.js"></script>
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.reporting.js"></script>
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.execute.js"></script>
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.data.js"></script>
+
+	<script type="text/javascript" src="http://www.stephennew.com/safr/scripts/safr.charts.js"></script>
+
+<link href="https://www.google.com/uds/api/visualization/1.0/ce05bcf99b897caacb56a7105ca4b6ed/ui+en.css" type="text/css" rel="stylesheet">  
+
+<style>
+
+html, body {
+
+	height:100%;
+
+	padding:0px;
+
+	margin:0px;
+
+}
+
+#wrapper{
+
+	display:block;
+
+	position:relative;
+
+width:100%;
+
+height:100%;	
+
+}
+#wrapper .vs {
+	display:block;
+	margin:auto;
+	width:10%;
+}
+#wrapper .vs h1 {
+	display:block;
+	text-align:center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:30px;
+}
+#map-canvas {
+
+	    width:400px;
+
+        height: 400px;
+
+        margin: auto;
+
+        padding: 0px;
+
+		z-index:9990;
+
+		border-radius:100%;
+
+      }
+
+	  #map-canvastwo {
+		
+	    width:400px;
+
+        height: 400px;
+
+        margin: auto;
+
+        padding: 0px;
+
+		z-index:9990;
+
+		border-radius:100%;
+
+      }
+
+#mapwrapper-one {
+	margin:auto;
+
+	padding:0px;
+
+	width:45%;	
+
+	height:500px;
+	float:left;
+
+}
+
+#mapwrapper-two {
+	margin:auto;
+
+	padding:0px;
+
+	width:45%;	
+
+	height:500px;
+	float:right;
+}
+
+
+.month-sel {
+ height:40px;
+ line-height:40px;
+ font-size:16px;
+ font-family:Helvetica, Arial, sans-serif;
+ width:200px;
+ z-index:9999;
+ margin:0px 0px 0px -4px;
+ -webkit-appearance: none;
+ border:none;
+   border-top:3px solid #34599f;
+ background-color:#294478;
+ color:rgb(137, 164, 216);
+ padding:0px 0px 0px 20px;
+ 
+}
+.year-sel {
+	 font-size:16px;
+ height:40px;
+ line-height:40px;
+ font-family:Helvetica, Arial, sans-serif;
+ width:100px;
+ z-index:9999;
+ margin:0px;
+ -webkit-appearance: none;
+  border:none;
+ border-top:3px solid #34599f;
+ background-color:#294478;
+  color:rgb(137, 164, 216);
+  padding:0px 0px 0px 20px;
+}
+.selections {
+	margin:20px auto;
+	width:100%;	
+	text-align:center;
+}
+.search-place{
+	 font-size:16px;
+ height:40px;
+ line-height:40px;
+ font-family:Helvetica, Arial, sans-serif;
+ width:100px;
+ z-index:9999;
+ margin:auto;
+ -webkit-appearance: none;
+  border:none;
+ border-top:3px solid #34599f;
+ background-color:#446fc3;
+  color:#0f192b;
+	width:300px;
+	display:block;
+	padding:0px 0px 0px 20px;
+	 -webkit-appearance: none;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #0f192b;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #0f192b;
+}
+@media screen and (max-device-width: 900px), screen and (max-width: 900px){
+	#mapwrapper-one, #mapwrapper-two, .vs{
+		display:block !important;
+	width:100% !important;	
+	}
+}
+</style>
+
+</head>
+
+
+
+<body>
+
+<div id="wrapper">
+
+
+<!-- LEFT MAP --->
+
+<div id="mapwrapper-one">
+<div class="selections">
+<input id="txtAddress" class="search-place" type="search" placeholder="Search via Post Code/Location">
+		<select class="year-sel" id="year">
+		    <option value='null'>Year</option>
+		    <option value='2010'>2010</option>
+		    <option value='2011'>2011</option>
+		    <option value='2012'>2012</option>
+		    <option value='2013'>2013</option>
+		    <option value='2014'>2014</option>		    
+		</select>
+<select class="month-sel" id="month">
+		    <option value='null'>Month</option>
+		    <option value='01'>January</option>
+		    <option value='02'>February</option>
+		    <option value='03'>March</option>
+		    <option value='04'>April</option>
+		    <option value='05'>May</option>
+		    <option value='06'>June</option>
+		    <option value='07'>July</option>
+		    <option value='08'>August</option>
+		    <option value='09'>September</option>
+		    <option value='10'>October</option>
+		    <option value='11'>November</option>
+		    <option value='12'>December</option>
+		</select>
+
+
+        </div>
+<div id="map-canvas"></div>
+
+</div>
+
+<!-- /LEFT MAP --->
+
+<!-- RIGHT MAP --->
+
+<div id="mapwrapper-two">
+<div class="selections">
+<input id="txtAddress" class="search-place" type="search" placeholder="Search via Post Code/Location">
+		<select class="year-sel" id="year">
+		    <option value='null'>Year</option>
+		    <option value='2010'>2010</option>
+		    <option value='2011'>2011</option>
+		    <option value='2012'>2012</option>
+		    <option value='2013'>2013</option>
+		    <option value='2014'>2014</option>		    
+		</select>
+<select class="month-sel" id="month">
+		    <option value='null'>Month</option>
+		    <option value='01'>January</option>
+		    <option value='02'>February</option>
+		    <option value='03'>March</option>
+		    <option value='04'>April</option>
+		    <option value='05'>May</option>
+		    <option value='06'>June</option>
+		    <option value='07'>July</option>
+		    <option value='08'>August</option>
+		    <option value='09'>September</option>
+		    <option value='10'>October</option>
+		    <option value='11'>November</option>
+		    <option value='12'>December</option>
+		</select>
+
+
+        </div>
+<div id="map-canvastwo"></div>
+
+</div>
+
+<!-- /RIGHT MAP --->
+
+
+</div>
+
+</body>
+
+</html>
+
